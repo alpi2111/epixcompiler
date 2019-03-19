@@ -12,6 +12,7 @@ namespace EpixCompilerIDE {
     public partial class frmMain : Form {
 
         private byte cont = 0;
+        private RichTextBox textBox = new RichTextBox();
 
         public frmMain() {
             InitializeComponent();
@@ -20,6 +21,8 @@ namespace EpixCompilerIDE {
             splitCodigo.Visible = false;
             tabInfo.Enabled = false;
             tabCodigos.Visible = false;
+            textBox.AcceptsTab = true;
+            textBox.Dock = System.Windows.Forms.DockStyle.Fill;
         }
 
         Procesos archivo = new Procesos();
@@ -35,13 +38,18 @@ namespace EpixCompilerIDE {
             nueva.TabIndex = cont;
             nueva.Text = "Sin Titulo " + (++cont);
             nueva.UseVisualStyleBackColor = true;
+            nueva.Controls.Add(textBox);
             tabCodigos.Controls.Add(nueva);
             tabCodigos.TabIndex = cont - 1;
             tabCodigos.SelectTab(cont - 1);
             if (!tabCodigos.Visible) {
                 tabCodigos.Visible = true;
+                tabCodigos.Enabled = true;
+                splitCodigo.Visible = true;
+                splitCodigo.Enabled = true;
                 archCerrar.Enabled = true;
                 archGuardar.Enabled = true;
+                tabInfo.Enabled = true;
             }
         }
 
@@ -52,6 +60,24 @@ namespace EpixCompilerIDE {
             //string ruta = openFile.FileName;
             archivo.Ruta = openFile.FileName;
             //richTextBox1.LoadFile(archivo.Ruta);
+            textBox.LoadFile(archivo.Ruta);
+            TabPage nueva = new TabPage();
+            nueva.Name = cont + "";
+            nueva.Padding = new System.Windows.Forms.Padding(3);
+            nueva.TabIndex = cont;
+            nueva.Text = openFile.FileName; //falla al mostrar el nombre
+            nueva.UseVisualStyleBackColor = true;
+            nueva.Controls.Add(textBox);
+            tabCodigos.Controls.Add(nueva);
+            if (!tabCodigos.Visible) {
+                tabCodigos.Visible = true;
+                tabCodigos.Enabled = true;
+                splitCodigo.Visible = true;
+                splitCodigo.Enabled = true;
+                archCerrar.Enabled = true;
+                archGuardar.Enabled = true;
+                tabInfo.Enabled = true;
+            }
             Console.WriteLine(archivo.Ruta);
         }
 
@@ -64,7 +90,7 @@ namespace EpixCompilerIDE {
                 saveFile.AddExtension = true;
                 saveFile.CheckPathExists = true;
                 //saveFile.DefaultExt = ".epix";
-                saveFile.FileName = "Sin Titulo "+ (tabCodigos.SelectedIndex + 1) + ".epix";
+                saveFile.FileName = "Sin Titulo " + (tabCodigos.SelectedIndex + 1) + ".epix";
                 saveFile.Filter = "Epix source file|.epix";
                 saveFile.ShowDialog();
                 //saveFile.
@@ -72,6 +98,7 @@ namespace EpixCompilerIDE {
                 //tabCodigos.SelectedIndex
                 //tabCodigos.Name = 
                 //richTextBox1.SaveFile(archivo.Ruta);
+                textBox.SaveFile(archivo.Ruta);
                 Console.WriteLine(archivo.Ruta);
             } else if (!archivo.IsSave) {
                 //solo debe guardar el archivo en la ruta que se abrio
@@ -88,7 +115,7 @@ namespace EpixCompilerIDE {
                 //TODO: simplemente cerrar el archivo
             }*/
 
-            if (tabCodigos.SelectedIndex > 0) {
+            if (tabCodigos.SelectedIndex >= 0) {
                 tabCodigos.Controls.RemoveAt(tabCodigos.SelectedIndex);
             } else {
                 archCerrar.Enabled = false;
