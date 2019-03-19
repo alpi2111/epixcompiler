@@ -45,13 +45,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clases\AnalizadorLexico.cs" />
     <Compile Include="frmEpixIDE.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmEpixIDE.Designer.cs">
       <DependentUpon>frmEpixIDE.cs</DependentUpon>
     </Compile>
-    <Compile Include="procesos.cs" />
+    <Compile Include="clases\procesos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmEpixIDE.resx">
