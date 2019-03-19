@@ -1,0 +1,10 @@
+C:\Users\Alpirez\source\repos\EpixCompilerIDE\EpixCompilerIDE\bin\Debug\EpixCompilerIDE.exe.config
+C:\Users\Alpirez\source\repos\EpixCompilerIDE\EpixCompilerIDE\bin\Debug\EpixCompilerIDE.exe
+C:\Users\Alpirez\source\repos\EpixCompilerIDE\EpixCompilerIDE\bin\Debug\EpixCompilerIDE.pdb
+C:\Users\Alpirez\source\repos\EpixCompilerIDE\EpixCompilerIDE\obj\Debug\EpixCompilerIDE.csprojAssemblyReference.cache
+C:\Users\Alpirez\source\repos\EpixCompilerIDE\EpixCompilerIDE\obj\Debug\EpixCompilerIDE.frmMain.resources
+C:\Users\Alpirez\source\repos\EpixCompilerIDE\EpixCompilerIDE\obj\Debug\EpixCompilerIDE.Properties.Resources.resources
+C:\Users\Alpirez\source\repos\EpixCompilerIDE\EpixCompilerIDE\obj\Debug\EpixCompilerIDE.csproj.GenerateResource.cache
+C:\Users\Alpirez\source\repos\EpixCompilerIDE\EpixCompilerIDE\obj\Debug\EpixCompilerIDE.csproj.CoreCompileInputs.cache
+C:\Users\Alpirez\source\repos\EpixCompilerIDE\EpixCompilerIDE\obj\Debug\EpixCompilerIDE.exe
+C:\Users\Alpirez\source\repos\EpixCompilerIDE\EpixCompilerIDE\obj\Debug\EpixCompilerIDE.pdb
