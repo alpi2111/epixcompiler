@@ -64,11 +64,13 @@ namespace EpixCompilerIDE {
                 saveFile.AddExtension = true;
                 saveFile.CheckPathExists = true;
                 //saveFile.DefaultExt = ".epix";
-                saveFile.FileName = "sin titulo.epix";
+                saveFile.FileName = "Sin Titulo "+ (tabCodigos.SelectedIndex + 1) + ".epix";
                 saveFile.Filter = "Epix source file|.epix";
                 saveFile.ShowDialog();
                 //saveFile.
                 archivo.Ruta = saveFile.FileName;
+                //tabCodigos.SelectedIndex
+                //tabCodigos.Name = 
                 //richTextBox1.SaveFile(archivo.Ruta);
                 Console.WriteLine(archivo.Ruta);
             } else if (!archivo.IsSave) {
@@ -95,9 +97,9 @@ namespace EpixCompilerIDE {
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e) {
-            if (archivo.IsSave == true || archivo.Ruta.Equals("")) {
+            if (archivo.IsSave == true || archivo.IsFirst) {
                 Application.Exit();
-            } else if (!archivo.IsSave) {
+            } else if (!archivo.IsSave || archivo.IsFirst) {
                 DialogResult salir = MessageBox.Show("Existe un documento sin guardar, ¿Desea guardar los cambios y salir?", "¿Salir?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
                 if (salir == DialogResult.Yes) {
                     //TODO: guardar cambios y luego cerrar
