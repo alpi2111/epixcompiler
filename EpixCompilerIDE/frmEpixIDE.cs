@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EpixCompilerIDE.clases;
 
 namespace EpixCompilerIDE {
     public partial class frmMain : Form {
@@ -23,9 +24,15 @@ namespace EpixCompilerIDE {
             tabCodigos.Visible = false;
             textBox.AcceptsTab = true;
             textBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            textBox.KeyDown += userKeyPress;
         }
 
-        Procesos archivo = new Procesos();
+        private void userKeyPress(object sender, KeyEventArgs e) {
+            //throw new NotImplementedException();
+            //Console.WriteLine("Se presiono " + sender);
+        }
+
+        private Procesos archivo = new Procesos();
 
         //PARTE DEL MENU ARCHIVO
         private void archNuevo_Click(object sender, EventArgs e) {
@@ -138,5 +145,22 @@ namespace EpixCompilerIDE {
             }
         }
         //FINALIZA LA PARTE DEL MENU ARCHIVO
+
+        private void analizarToolStripMenuItem_Click(object sender, EventArgs e) {
+            string linea = "";
+            //if(textBox.Lines)
+            if (textBox.Lines.Count() > 0) {
+                for (int i = 0; i < textBox.Lines.Count(); i++) {
+                    //linea = textBox.Lines[i];
+                    string[] partir = textBox.Lines[i].Split(' ');
+                    //Console.WriteLine("Lineas : " + textBox.Lines.Count());
+                    linea = AnalizadorLexico.analizarTokens(partir);
+                    Console.WriteLine(linea);
+                }
+                //if()
+  //              Console.WriteLine("Linea : " + linea);
+//                AnalizadorLexico.analizarTokens(linea);
+            }
+        }
     }
 }

@@ -49,11 +49,11 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitCodigo = new System.Windows.Forms.SplitContainer();
+            this.tabCodigos = new System.Windows.Forms.TabControl();
             this.tabInfo = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.txtbxSalida = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabCodigos = new System.Windows.Forms.TabControl();
             this.menu.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -170,25 +170,26 @@
             // analizarToolStripMenuItem
             // 
             this.analizarToolStripMenuItem.Name = "analizarToolStripMenuItem";
-            this.analizarToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.analizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.analizarToolStripMenuItem.Text = "Analizar";
+            this.analizarToolStripMenuItem.Click += new System.EventHandler(this.analizarToolStripMenuItem_Click);
             // 
             // compilarToolStripMenuItem
             // 
             this.compilarToolStripMenuItem.Name = "compilarToolStripMenuItem";
-            this.compilarToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.compilarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.compilarToolStripMenuItem.Text = "Compilar";
             // 
             // ejecutarToolStripMenuItem
             // 
             this.ejecutarToolStripMenuItem.Name = "ejecutarToolStripMenuItem";
-            this.ejecutarToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.ejecutarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ejecutarToolStripMenuItem.Text = "Ejecutar";
             // 
             // compilarYEjecutarToolStripMenuItem
             // 
             this.compilarYEjecutarToolStripMenuItem.Name = "compilarYEjecutarToolStripMenuItem";
-            this.compilarYEjecutarToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.compilarYEjecutarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.compilarYEjecutarToolStripMenuItem.Text = "Compilar y Ejecutar";
             // 
             // ajustesToolStripMenuItem
@@ -258,6 +259,15 @@
             this.splitCodigo.SplitterDistance = 624;
             this.splitCodigo.TabIndex = 0;
             // 
+            // tabCodigos
+            // 
+            this.tabCodigos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabCodigos.Location = new System.Drawing.Point(0, 0);
+            this.tabCodigos.Name = "tabCodigos";
+            this.tabCodigos.SelectedIndex = 0;
+            this.tabCodigos.Size = new System.Drawing.Size(620, 337);
+            this.tabCodigos.TabIndex = 0;
+            // 
             // tabInfo
             // 
             this.tabInfo.Controls.Add(this.tabPage1);
@@ -299,15 +309,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Informacion de compilacion";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabCodigos
-            // 
-            this.tabCodigos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabCodigos.Location = new System.Drawing.Point(0, 0);
-            this.tabCodigos.Name = "tabCodigos";
-            this.tabCodigos.SelectedIndex = 0;
-            this.tabCodigos.Size = new System.Drawing.Size(620, 337);
-            this.tabCodigos.TabIndex = 0;
             // 
             // frmMain
             // 
